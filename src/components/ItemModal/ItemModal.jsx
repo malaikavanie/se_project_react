@@ -3,11 +3,11 @@ import { useEffect } from "react";
 
 export default function ItemModal({ card, handleCloseClick, isOpen }) {
   useEffect(() => {
+    if (!isOpen) return; // stop the effect not to add the listener if there is no active modal
     const handleClickOutside = (e) => {
       if (e.target.classList.contains("modal")) {
         handleCloseClick();
       }
-      if (!isOpen) return; // stop the effect not to add the listener if there is no active modal
     };
 
     document.addEventListener("mousedown", handleClickOutside);
