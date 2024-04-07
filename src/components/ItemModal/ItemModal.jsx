@@ -7,6 +7,7 @@ export default function ItemModal({ card, handleCloseClick, isOpen }) {
       if (e.target.classList.contains("modal")) {
         handleCloseClick();
       }
+      if (!isOpen) return; // stop the effect not to add the listener if there is no active modal
     };
 
     document.addEventListener("mousedown", handleClickOutside);
@@ -14,7 +15,7 @@ export default function ItemModal({ card, handleCloseClick, isOpen }) {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [handleCloseClick]);
+  }, [handleCloseClick, isOpen]);
 
   return (
     <div className={`modal${isOpen ? " modal_opened" : ""}`}>

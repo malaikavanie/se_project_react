@@ -42,6 +42,7 @@ function App() {
   }, []);
 
   useEffect(() => {
+    if (!activeModal) return; // stop the effect not to add the listener if there is no active modal
     const handleKeyDown = (evt) => {
       if (evt.key === "Escape") {
         closeActiveModal();
@@ -53,7 +54,7 @@ function App() {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [activeModal]);
 
   return (
     <div className="page">
