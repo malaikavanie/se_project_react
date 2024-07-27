@@ -1,34 +1,14 @@
-import "./Main.css";
-import WeatherCard from "../WeatherCard/WeatherCard";
-import ItemCard from "../ItemCard/ItemCard";
-import { defaultClothingItems } from "../../utils/constants";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 
-function Main({ weatherData, handleCardClick }) {
-  return (
-    <main className="main">
-      <WeatherCard weatherData={weatherData} />
-      <section className="cards">
-        <p className="cards__title">
-          Today is {weatherData.temp.F.toFixed(1)}° F / You may want to wear:
-        </p>
-        <ul className="cards__list">
-          {defaultClothingItems
-            .filter((item) => {
-              return item.weather === weatherData.type;
-            })
-            .map((item) => {
-              return (
-                <ItemCard
-                  handleCardClick={handleCardClick}
-                  key={item._id}
-                  item={item}
-                />
-              );
-            })}
-        </ul>
-      </section>
-    </main>
-  );
-}
+import App from "./components/App/App";
+import "./index.css";
 
-export default Main;
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
+);
