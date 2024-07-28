@@ -19,7 +19,7 @@ import { getItems, addItem, deleteItem } from "../../utils/api";
 import { apiKey, coordinates } from "../../utils/constants";
 
 //contexts
-import { CurrentTemperatureUnitContext } from "../../context/CurrentTemperatureUnitContext";
+import { CurrentTemperatureUnitContext } from "../../context/ContextTemperatureUnitContext";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
