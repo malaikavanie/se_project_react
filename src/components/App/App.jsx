@@ -19,7 +19,7 @@ import { getItems, addItem, deleteItem } from "../../utils/api";
 import { apiKey, coordinates } from "../../utils/constants";
 
 //contexts
-import { ContextTemperatureUnitContextt } from "../../context/ContextTemperatureUnitContext";
+import { CurrentTemperatureUnitContext } from "../../context/CurrentTemperatureUnitContext";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -126,7 +126,7 @@ function App() {
 
   return (
     <div className="page">
-      <ContextTemperatureUnitContext.Provider
+      <CurrentTemperatureUnitContext.Provider
         value={{ currentTemperatureUnit, handleToggleSwitchChange }}
       >
         <div className="page__content">
@@ -177,7 +177,7 @@ function App() {
           card={selectedCard}
           handleCardDelete={handleCardDelete}
         />
-      </ContextTemperatureUnitContext.Provider>
+      </CurrentTemperatureUnitContext.Provider>
     </div>
   );
 }
