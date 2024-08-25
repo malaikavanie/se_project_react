@@ -1,8 +1,8 @@
-export const apiKey = "db9e5115ea5873f9abc7ff2640e5cb07";
+export const apiKey = "9ea40cf4c0a8076f28a522df91177cd3";
 
 export const coordinates = {
-  latitude: "40.719517",
-  longitude: "-73.852211",
+  latitude: "41.763710",
+  longitude: "72.6734",
 };
 
 export const weatherOptions = [
@@ -37,11 +37,6 @@ export const weatherOptions = [
     url: new URL("../assets/day/stormy.png", import.meta.url).href,
   },
   {
-    day: true,
-    condition: "default",
-    url: new URL("../assets/day/default.png", import.meta.url).href,
-  },
-  {
     day: false,
     condition: "clear",
     url: new URL("../assets/night/clear.png", import.meta.url).href,
@@ -71,12 +66,7 @@ export const weatherOptions = [
     condition: "stormy",
     url: new URL("../assets/night/stormy.png", import.meta.url).href,
   },
-  {
-    day: false,
-    condition: "default",
-    url: new URL("../assets/night/default.png", import.meta.url).href,
-  },
 ];
 
 //-----------------BASEURL FOR CLOTHING ITEMS------------------>>
-export const baseUrl = "http://localhost:3001";
+export const baseUrl = "http://localhost:3000";
