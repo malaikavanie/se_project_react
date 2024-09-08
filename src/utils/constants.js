@@ -106,3 +106,4 @@ export const weatherOptions = [
     url: new URL("../assets/night/stormy.png", import.meta.url).href,
   },
 ];
+export const baseUrl = "http://localhost:3000";
